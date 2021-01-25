@@ -1,3 +1,3 @@
-const Overlay = () => <p>This is a test</p>
+const Overlay = ({token, campaignId}) => <p>{token} - {campaignId}</p>
 
 export default Overlay;
