@@ -11,7 +11,7 @@ class Overlay extends React.Component {
   
   donations$ = this.props.test ? 
   interval(5000).pipe(
-    map(count => new Array(count + 1).fill(0).map((_, index) => ({name: "Testing", amount: index * 0.5}))),
+    map(count => new Array(count + 1).fill(0).map((_, index) => ({id: index, name: "Testing", amount: index * 0.5}))),
     tap(data => console.log(data))
   ) : 
   timer(2000, 60000).pipe(
@@ -23,7 +23,7 @@ class Overlay extends React.Component {
         "User-Agent": "jmmedina00/donors-overlay"
       }
     })),
-    map(({response: { data }}) => data.map(({amount, name}) => ({amount, name}))),
+    map(({response: { data }}) => data.map(({id, amount, name}) => ({id, amount, name}))),
     tap(data => console.log(data))
   );
 
@@ -41,7 +41,7 @@ class Overlay extends React.Component {
 
   render() {
     const visualDonations = this.state.donations.map(
-      ({amount, name}) => <Donation amount={amount} name={name}/>
+      ({id, amount, name}) => <Donation key={id} amount={amount} name={name}/>
     )
     return <div>{visualDonations}</div>;
   }
