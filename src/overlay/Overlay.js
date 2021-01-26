@@ -2,9 +2,12 @@ import { ajax } from "rxjs/ajax";
 import { timer } from "rxjs";
 import { map, switchMap, tap } from "rxjs/operators";
 import React from "react";
+import Donation from "./Donation";
 
 class Overlay extends React.Component {
   subscription = null;
+
+  state = {donations: []};
   
   donations$ = timer(2000, 60000).pipe(
     switchMap(() => ajax({
@@ -32,7 +35,10 @@ class Overlay extends React.Component {
   }
 
   render() {
-    return <p>{this.props.token} - {this.props.campaignId}</p>;
+    const visualDonations = this.state.donations.map(
+      ({amount, name}) => <Donation amount={amount} name={name}/>
+    )
+    return <div>{visualDonations}</div>;
   }
 }
 
