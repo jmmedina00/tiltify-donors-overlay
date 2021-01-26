@@ -7,9 +7,10 @@ function App() {
 
   const accessToken = params.get("token");
   const campaignId = params.get("campaign");
+  const testMode = params.get("test");
 
   return accessToken && campaignId ? 
-  <Overlay token={accessToken} campaignId={campaignId}/> : 
+  <Overlay token={accessToken} campaignId={campaignId} test={!!testMode}/> : 
   <LinkGenerator/>;
 }
 

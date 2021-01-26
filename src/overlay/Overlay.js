@@ -1,5 +1,5 @@
 import { ajax } from "rxjs/ajax";
-import { timer } from "rxjs";
+import { interval, timer } from "rxjs";
 import { map, switchMap, tap } from "rxjs/operators";
 import React from "react";
 import Donation from "./Donation";
@@ -9,7 +9,12 @@ class Overlay extends React.Component {
 
   state = {donations: []};
   
-  donations$ = timer(2000, 60000).pipe(
+  donations$ = this.props.test ? 
+  interval(5000).pipe(
+    map(count => new Array(count + 1).fill(0).map((_, index) => ({name: "Testing", amount: index * 0.5}))),
+    tap(data => console.log(data))
+  ) : 
+  timer(2000, 60000).pipe(
     switchMap(() => ajax({
       url: `https://tiltify.com/api/v3/campaigns/${this.props.campaignId}/donations?count=100`,
       method: "GET",
