@@ -1,3 +1,17 @@
+@keyframes newdonation {
+  from {
+    color: blue;
+  }
+  to {
+    color: black;
+  }
+}
+
+.donation {
+  animation-name: newdonation;
+  animation-duration: 1s;
+}
+
 .donation .donor {
   display: inline-block;
   width: 300px;
