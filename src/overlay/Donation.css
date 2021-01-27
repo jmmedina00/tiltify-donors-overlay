@@ -10,13 +10,15 @@
 .donation {
   animation-name: newdonation;
   animation-duration: 1s;
+  display: flex;
 }
 
 .donation .donor {
   display: inline-block;
-  width: 300px;
+  flex-grow: 1;
 }
 
 .donation .amount {
   display: inline;
+  text-align: right;
 }
