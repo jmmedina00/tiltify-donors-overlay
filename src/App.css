@@ -1,9 +1,19 @@
+html {
+  --color-text: white;
+  --color-background: black;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
 @keyframes newdonation {
   from {
     color: blue;
   }
   to {
-    color: black;
+    color: var(--color-text);
   }
 }
 
@@ -33,7 +43,7 @@
 
 .donor,
 .amount-display {
-  border: 2px solid black;
+  border: 2px solid var(--color-text);
   border-radius: 5px;
   display: flex;
   align-items: center;
