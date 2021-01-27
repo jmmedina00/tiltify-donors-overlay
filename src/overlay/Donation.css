@@ -13,12 +13,15 @@
   display: flex;
 }
 
-.donation .donor {
+.donation * {
   display: inline-block;
+}
+
+.donor {
   flex-grow: 1;
 }
 
-.donation .amount {
-  display: inline;
+.amount {
   text-align: right;
+  width: 3.5em;
 }
