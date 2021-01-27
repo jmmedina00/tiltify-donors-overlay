@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+
 html {
   --color-text: white;
   --color-background: black;
@@ -8,6 +10,9 @@ html {
 body {
   color: var(--color-text);
   background-color: var(--color-background);
+  font-family: Cairo, sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 @keyframes newdonation {
@@ -35,6 +40,7 @@ body {
 
 .amount-display {
   background-color: var(--color-amount);
+  font-size: 0.8em;
 }
 
 .donor {
@@ -50,8 +56,9 @@ body {
 
 .donor,
 .amount-display {
-  border: 2px solid var(--color-text);
+  border: 3px solid var(--color-text);
   border-radius: 5px;
+  padding: 0 0.5em;
   display: flex;
   align-items: center;
 }
