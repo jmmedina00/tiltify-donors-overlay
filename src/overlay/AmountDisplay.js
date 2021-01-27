@@ -9,8 +9,8 @@ const AmountDisplay = ({
   currency = "dollar", position = "left", children
 }) => {
   const internalDivs = [
-    <div className="amount">{children}</div>,
-    <div className="currency">{currencies[currency]}</div>
+    <div className="amount" key="0">{children}</div>,
+    <div className="currency" key="1">{currencies[currency]}</div>
   ];
 
   if (position === "left") {
