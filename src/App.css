@@ -17,20 +17,21 @@ body {
 
 @keyframes newdonation {
   from {
-    color: blue;
+    height: 0;
   }
   to {
-    color: var(--color-text);
+    height: 50px;
   }
 }
 
 .donation {
   animation-name: newdonation;
-  animation-duration: 1s;
+  animation-duration: 0.75s;
   display: flex;
 
   height: 50px;
   margin-bottom: 2px;
+  overflow: hidden;
 }
 
 .donation > * {
