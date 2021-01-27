@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 
 html {
-  --color-text: white;
-  --color-background: black;
-  --color-donor: red;
-  --color-amount: green;
+  --color-text: #e7e7e7;
+  --color-background: #333333;
+  --color-donor: #cc2b2b;
+  --color-amount: #239c23;
 }
 
 body {
