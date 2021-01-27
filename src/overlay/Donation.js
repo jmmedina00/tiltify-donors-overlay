@@ -1,5 +1,4 @@
 import AmountDisplay from "./AmountDisplay";
-import "./Donation.css";
 
 const Donation = ({amount, name}) => 
   <div className="donation">

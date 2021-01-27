@@ -1,0 +1,40 @@
+@keyframes newdonation {
+  from {
+    color: blue;
+  }
+  to {
+    color: black;
+  }
+}
+
+.donation {
+  animation-name: newdonation;
+  animation-duration: 1s;
+  display: flex;
+
+  height: 50px;
+  margin-bottom: 2px;
+}
+
+.donation > * {
+  display: inline-block;
+  align-self: stretch;
+}
+
+.donor {
+  flex-grow: 1;
+  margin-right: 0.25rem;
+}
+
+.amount {
+  text-align: right;
+  width: 3.5rem;
+}
+
+.donor,
+.amount-display {
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
