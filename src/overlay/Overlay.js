@@ -32,7 +32,10 @@ class Overlay extends React.Component {
   }
 
   componentDidMount() {
-    this.subscription = this.donations$.subscribe(this.updateDonations.bind(this));
+    this.subscription = this.donations$.subscribe(
+      res => this.updateDonations(res),
+      err => this.setState({error: true})
+    );
   }
 
   componentWillUnmount() {
@@ -40,6 +43,10 @@ class Overlay extends React.Component {
   }
 
   render() {
+    if (this.state.error) {
+      return <p>Token has been banned.</p>
+    }
+    
     const visualDonations = this.state.donations.map(
       ({id, amount, name}) => <Donation key={id} amount={amount} name={name}/>
     )
