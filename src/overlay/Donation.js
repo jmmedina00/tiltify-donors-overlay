@@ -2,8 +2,8 @@ import "./Donation.css";
 
 const Donation = ({amount, name}) => 
   <div className="donation">
-    <span className="donor">{name}</span>
-    <span className="amount">{amount}</span>
+    <div className="donor">{name}</div>
+    <div className="amount">{amount}</div>
   </div>;
 
 export default Donation;

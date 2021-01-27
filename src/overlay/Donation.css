@@ -16,3 +16,7 @@
   display: inline-block;
   width: 300px;
 }
+
+.donation .amount {
+  display: inline;
+}
