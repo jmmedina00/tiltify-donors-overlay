@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const currencies = {
   dollar: "$",
@@ -6,14 +7,14 @@ const currencies = {
 }
 
 const AmountDisplay = ({
-  currency = "dollar", position = "left", children
+  currency, swap, children
 }) => {
   const internalDivs = [
     <div className="amount" key="0">{children}</div>,
-    <div className="currency" key="1">{currencies[currency]}</div>
+    <div className="currency" key="1">{currency}</div>
   ];
 
-  if (position === "left") {
+  if (swap) {
     internalDivs.reverse();
   }
 
@@ -22,4 +23,7 @@ const AmountDisplay = ({
   </div>;
 }
 
-export default AmountDisplay;
+const mapStateToProps = ({currency: currencyName, swap}) => ({
+  currency: currencies[currencyName], swap
+});
+export default connect(mapStateToProps)(AmountDisplay);
