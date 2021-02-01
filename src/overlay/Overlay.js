@@ -1,3 +1,4 @@
+import { connect } from "react-redux";
 import { ajax } from "rxjs/ajax";
 import { interval, timer } from "rxjs";
 import { map, switchMap, tap } from "rxjs/operators";
