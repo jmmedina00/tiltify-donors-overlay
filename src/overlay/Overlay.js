@@ -9,7 +9,7 @@ class Overlay extends React.Component {
 
   state = {donations: []};
   
-  donations$ = this.props.test ? 
+  donations$ = this.props.testMode ? 
   interval(5000).pipe(
     map(count => new Array(count + 1).fill(0).map((_, index) => ({id: index, name: "Testing", amount: index * 0.5}))),
     tap(data => console.log(data))
