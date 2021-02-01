@@ -85,4 +85,30 @@ body {
   max-width: 600px;
   padding: 1em;
   border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+
+.generate-link {
+  background-color: #222222;
+  color: var(--color-text);
+  border: 1px solid white;
+  border-radius: 10px;
+
+  width: 120px;
+}
+
+.title {
+  margin-right: 0.5em;
+}
+
+.generator > div,
+label {
+  margin-right: 1em;
+}
+
+#campaign {
+  width: 4em;
 }
