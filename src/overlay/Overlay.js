@@ -54,4 +54,5 @@ class Overlay extends React.Component {
   }
 }
 
-export default Overlay;
+const mapStateToProps = ({token, campaignId, testMode}) => ({token, campaignId, testMode});
+export default connect(mapStateToProps)(Overlay);
