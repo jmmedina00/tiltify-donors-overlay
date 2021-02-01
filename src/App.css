@@ -63,3 +63,26 @@ body {
   display: flex;
   align-items: center;
 }
+
+/* Link generator styles */
+
+.vertical-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.generator {
+  background-color: black;
+  border: 1px solid white;
+
+  max-width: 600px;
+  padding: 1em;
+  border-radius: 10px;
+}
