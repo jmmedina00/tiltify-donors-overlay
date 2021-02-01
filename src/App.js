@@ -1,17 +1,21 @@
 import './App.css';
 import Overlay from "./overlay/Overlay"
 import LinkGenerator from './link-generator/LinkGenerator';
+import { loadParams } from "./actions";
+import { connect } from 'react-redux';
 
-function App() {
+function App({loadParams}) {
   const params = (new URL(document.location)).searchParams;
 
   const accessToken = params.get("token");
   const campaignId = params.get("campaign");
   const testMode = params.get("test");
 
+  loadParams({accessToken, campaignId, testMode: !!testMode});
+
   return accessToken && campaignId ? 
-  <Overlay token={accessToken} campaignId={campaignId} test={!!testMode}/> : 
-  <LinkGenerator/>;
+  <Overlay/> : <LinkGenerator/>;
 }
 
-export default App;
+const mapDispatchToProps = {loadParams};
+export default connect(null, mapDispatchToProps)(App);
