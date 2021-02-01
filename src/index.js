@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { LOAD_PARAMS } from './actions';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const initialState = {};
+
+const reducer = (state = initialState, action) => 
+action.type === LOAD_PARAMS ? {...state, ...action.data} : state;
+
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
