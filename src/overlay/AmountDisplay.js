@@ -23,7 +23,7 @@ const AmountDisplay = ({
   </div>;
 }
 
-const mapStateToProps = ({currency: currencyName, swap}) => ({
+const mapStateToProps = ({currency: currencyName = "dollar", swap}) => ({
   currency: currencies[currencyName], swap
 });
 export default connect(mapStateToProps)(AmountDisplay);
