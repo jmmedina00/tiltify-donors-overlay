@@ -27,7 +27,7 @@ const Overlay = ({donations$}) => {
   return <div>{visualDonations}</div>;
 }
 
-const mapStateToProps = ({token, campaignId, testMode}) => ({
+const mapStateToProps = ({accessToken, campaignId, testMode}) => ({
   donations$: testMode ? 
   interval(5000).pipe(
     map(count => new Array(count + 1).fill(0).map((_, index) => ({id: index, name: "Testing", amount: index * 0.5}))),
@@ -38,7 +38,7 @@ const mapStateToProps = ({token, campaignId, testMode}) => ({
       url: `https://tiltify.com/api/v3/campaigns/${campaignId}/donations?count=100`,
       method: "GET",
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${accessToken}`
       }
     })),
     map(({response: { data }}) => data.map(({id, amount, name}) => ({id, amount, name}))),
