@@ -1,6 +1,14 @@
 const generateLink = event => {
   event.preventDefault();
-  console.log(event);
+  const queryParams = [...new FormData(event.target).entries()]
+    .map(entry => entry.map(encodeURIComponent).join("="))
+    .join("&");
+
+  const targetUrl = `${new URL(document.location).host}?${queryParams}`;
+
+  navigator.clipboard.writeText(targetUrl)
+  .then(() => {alert("URL has been copied to your clipboard");})
+  .catch(error => {alert("An error has ocurred"); console.log(error);});
 }
 
 const LinkGenerator = () => 
