@@ -27,18 +27,18 @@ const Overlay = ({donations$}) => {
   return <div>{visualDonations}</div>;
 }
 
-const mapStateToProps = ({accessToken, campaignId, testMode}) => ({
-  donations$: testMode ? 
+const mapStateToProps = ({token, campaign, test}) => ({
+  donations$: test ? 
   interval(5000).pipe(
     map(count => new Array(count + 1).fill(0).map((_, index) => ({id: index, name: "Testing", amount: index * 0.5}))),
     tap(data => console.log(data)),
   ) : 
   timer(2000, 60000).pipe(
     switchMap(() => ajax({
-      url: `https://tiltify.com/api/v3/campaigns/${campaignId}/donations?count=100`,
+      url: `https://tiltify.com/api/v3/campaigns/${campaign}/donations?count=100`,
       method: "GET",
       headers: {
-        Authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${token}`
       }
     })),
     map(({response: { data }}) => data.map(({id, amount, name}) => ({id, amount, name}))),

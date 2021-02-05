@@ -7,16 +7,16 @@ import { connect } from 'react-redux';
 function App({loadParams}) {
   const params = (new URL(document.location)).searchParams;
 
+  const objectParams = [...params.entries()]
+    .reduce((object, [key, value]) => {
+    object[key] = value;
+    return object;
+  }, {})
+
+  loadParams(objectParams);
+
   const accessToken = params.get("token");
   const campaignId = params.get("campaign");
-  const testMode = params.get("test");
-  const currency = params.get("currency");
-  const swap = params.get("swap");
-
-  loadParams({
-    accessToken, campaignId, testMode: !!testMode,
-    currency, swap
-  });
 
   return accessToken && campaignId ? 
   <Overlay/> : <LinkGenerator/>;
