@@ -36,7 +36,7 @@ const LinkGenerator = () =>
           <input type="checkbox" id="swap" name="swap" defaultChecked="true"/>
         </div>
       </div>
-      <button className="generate-link">Link</button>
+      <button className="generate-link">Generate link</button>
     </form>
   </div>
 </div>
