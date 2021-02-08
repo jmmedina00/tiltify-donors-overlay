@@ -35,6 +35,10 @@ const LinkGenerator = () =>
           <label htmlFor="swap">Currency to the left?</label>
           <input type="checkbox" id="swap" name="swap" defaultChecked="true"/>
         </div>
+        <div>
+          <label htmlFor="highest">Sort by highest amount?</label>
+          <input type="checkbox" id="highest" name="highest"/>
+        </div>
       </div>
       <button className="generate-link">Generate link</button>
     </form>
