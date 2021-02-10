@@ -1,3 +1,5 @@
+import { LOAD_PARAMS } from './actions';
+
 const initialState = {};
 
 export const reducer = (state = initialState, action) => 
