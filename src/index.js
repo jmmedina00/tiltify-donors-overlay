@@ -6,11 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { LOAD_PARAMS } from './actions';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-
-const initialState = {};
-
-const reducer = (state = initialState, action) => 
-action.type === LOAD_PARAMS ? {...state, ...action.data} : state;
+import { reducer } from './reducer';
 
 const store = createStore(reducer);
 
