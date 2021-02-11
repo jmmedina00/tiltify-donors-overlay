@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { LOAD_PARAMS } from './actions';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer } from './reducer';
