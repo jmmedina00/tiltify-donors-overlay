@@ -3,7 +3,7 @@ import App from './App';
 import configureStore from 'redux-mock-store';
 import { loadParams } from './store/actions';
 
-jest.mock("./overlay/Overlay");
+jest.mock("./overlay/ConnectedOverlay");
 jest.mock("./link-generator/LinkGenerator");
 
 describe("App", () => {
