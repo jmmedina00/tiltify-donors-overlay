@@ -1,7 +1,7 @@
 import { render, screen } from './test-utils';
 import App from './App';
 import configureStore from 'redux-mock-store';
-import { loadParams } from './actions';
+import { loadParams } from './store/actions';
 
 jest.mock("./overlay/Overlay");
 jest.mock("./link-generator/LinkGenerator");

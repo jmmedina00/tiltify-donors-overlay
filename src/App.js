@@ -1,7 +1,7 @@
 import './App.css';
 import Overlay from "./overlay/ConnectedOverlay"
 import LinkGenerator from './link-generator/LinkGenerator';
-import { loadParams } from "./actions";
+import { loadParams } from "./store/actions";
 import { connect } from 'react-redux';
 
 function App({loadParams}) {
