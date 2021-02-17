@@ -1,6 +1,6 @@
 import { render, screen } from './test-utils';
 import App from './App';
-import configureStore from 'redux-mock-store';
+import configureStore from 'redux-mock-store'; // This mock works properly with the Provider
 import { loadParams } from './store/actions';
 
 jest.mock("./overlay/ConnectedOverlay");
