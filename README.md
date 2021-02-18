@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Tiltify Overlay
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overlay made with React that shows a Tiltify campaign's donations, sorted by newest to oldest or by amount given descendingly. An article about the making of this application is provided here.
 
-## Available Scripts
+## Usage instructions (as-is)
 
-In the project directory, you can run:
+1. Get your campaign's id from the campaign's dashboard. This [article](https://info.tiltify.com/support/solutions/articles/43000011766-the-campaign-dashboard-an-in-depth-explanation) describes exactly where it is.
 
-### `npm start`
+2. Go to the [account settings,](https://info.tiltify.com/support/solutions/articles/43000031909-my-account-settings) then go to _Your applications,_ create an application, enter its settings and get its access token from the section at the bottom.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Enter here.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Fill in the form with the campaign and the token, and select some options as you wish. When it's done, click _Generate link._
 
-### `npm test`
+5. Go to OBS and add a browser source, paste the link that was copied to your clipboard and set up the dimensions as you prefer. Make sure to remove the default custom CSS and not mark _Shutdown source when not visible_ or _Refresh browser when scene becomes active._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Styles documentation
 
-### `npm run build`
+You may modify the overlay's look via CSS, either by entering it in the `Custom CSS` field of the browser source's config, or by modifying them directly in the source code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A `.donation` is composed of its `.donor` and `.amount-display`, the last one wrapping the elements with classes `.amount` and `.currency`, which might have the appearance order swapped in order to accomodate for both dollars ($5.99) and euros (5.99€), thus it's not recommended to alter the order of `.amount` or `.currency` if your styles are going to be run with different currencies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+DIAGRAM
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you wish to modify the styles without using the custom CSS textarea, you'll have to run the application locally. Install [Node.js,](https://nodejs.org/) copy this repository and start the application by typing `npm start` at a command line set on the folder this repository has been copied to. The styles are located at `src/App.css`.
