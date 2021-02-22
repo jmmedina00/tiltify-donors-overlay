@@ -20,6 +20,6 @@ You may modify the overlay's look via CSS, either by entering it in the `Custom 
 
 A `.donation` is composed of its `.donor` and `.amount-display`, the last one wrapping the elements with classes `.amount` and `.currency`, which might have the appearance order swapped in order to accomodate for both dollars ($5.99) and euros (5.99€), thus it's not recommended to alter the order of `.amount` or `.currency` if your styles are going to be run with different currencies.
 
-DIAGRAM
+![A diagram showing how the overlay's styles are applied](assets/styles-diagram.png)
 
-If you wish to modify the styles without using the custom CSS textarea, you'll have to run the application locally. Install [Node.js,](https://nodejs.org/) copy this repository and start the application by typing `npm start` at a command line set on the folder this repository has been copied to. The styles are located at `src/App.css`.
+If you wish to modify the styles without using the custom CSS textarea (eg. you wish to create your own styles), you'll have to run the application locally. Install [Node.js,](https://nodejs.org/) copy this repository and start the application by typing `npm start` at a command line set on the folder this repository has been copied to. The styles are located at `src/App.css`.
