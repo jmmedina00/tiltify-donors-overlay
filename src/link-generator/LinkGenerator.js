@@ -4,7 +4,7 @@ const generateLink = event => {
     .map(entry => entry.map(encodeURIComponent).join('='))
     .join('&');
 
-  const targetUrl = `${new URL(document.location).host}?${queryParams}`;
+  const targetUrl = `${new URL(document.location).href}?${queryParams}`;
 
   navigator.clipboard
     .writeText(targetUrl)
