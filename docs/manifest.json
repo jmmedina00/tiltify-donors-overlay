@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./tiltify-donors-overlay",
   "display": "standalone",
   "theme_color": "#e7e7e7",
   "background_color": "#000000"
