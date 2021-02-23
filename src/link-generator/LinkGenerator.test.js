@@ -11,7 +11,7 @@ describe('LinkGenerator', () => {
   };
   window.alert = jest.fn(); // Without this, a warning pops up, but calls can't be asserted in tests
 
-  test('creates a link with the data input from the form (1)', () => {
+  test('creates a link with the data input from the form', () => {
     render(<LinkGenerator></LinkGenerator>);
 
     const inputCampaign = screen.getByLabelText('Campaign id');
@@ -32,7 +32,14 @@ describe('LinkGenerator', () => {
     );
   });
 
-  test('creates a link with the data input from the form (2)', () => {
+  test('creates a link from the path the LinkGenerator was called from', () => {
+    global.URL = function () {
+      // Arrow functions don't work when mocking classes
+      return {
+        href: 'http://localhost/test',
+      };
+    };
+
     render(<LinkGenerator></LinkGenerator>);
 
     const inputCampaign = screen.getByLabelText('Campaign id');
@@ -51,7 +58,7 @@ describe('LinkGenerator', () => {
 
     // Host is "localhost" during unit tests
     expect(clipboardContents).toBe(
-      'http://localhost/?campaign=3456&token=1a2b&currency=dollar&highest=on'
+      'http://localhost/test?campaign=3456&token=1a2b&currency=dollar&highest=on'
     );
   });
 });
