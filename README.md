@@ -1,6 +1,6 @@
 # Tiltify Overlay
 
-Overlay made with React that shows a Tiltify campaign's donations, sorted by newest to oldest or by amount given descendingly. An article about the making of this application is provided here.
+Overlay made with React that shows a Tiltify campaign's donations, sorted by newest to oldest or by amount given descendingly. An article about the making of this application is provided [here.](https://dev.to/jmmedina00/writing-a-custom-overlay-with-react-5c3k)
 
 ## Usage instructions (as-is)
 
