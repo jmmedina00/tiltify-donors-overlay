@@ -8,7 +8,7 @@ Overlay made with React that shows a Tiltify campaign's donations, sorted by new
 
 2. Go to the [account settings,](https://info.tiltify.com/support/solutions/articles/43000031909-my-account-settings) then go to _Your applications,_ create an application, enter its settings and get its access token from the section at the bottom.
 
-3. Enter here.
+3. Enter [here.](https://jmmedina00.github.io/tiltify-donors-overlay/)
 
 4. Fill in the form with the campaign and the token, and select some options as you wish. When it's done, click _Generate link._
 
