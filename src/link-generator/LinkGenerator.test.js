@@ -28,7 +28,7 @@ describe('LinkGenerator', () => {
 
     // Host is "localhost" during unit tests
     expect(clipboardContents).toBe(
-      'localhost?campaign=1234&token=abcd&currency=euro&swap=on'
+      'http://localhost/?campaign=1234&token=abcd&currency=euro&swap=on'
     );
   });
 
@@ -51,7 +51,7 @@ describe('LinkGenerator', () => {
 
     // Host is "localhost" during unit tests
     expect(clipboardContents).toBe(
-      'localhost?campaign=3456&token=1a2b&currency=dollar&highest=on'
+      'http://localhost/?campaign=3456&token=1a2b&currency=dollar&highest=on'
     );
   });
 });
